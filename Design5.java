@@ -1,5 +1,5 @@
 
-public class Design5  {
+public abstract class Design5  {
 	public char typeCoord;
 	  
 	  /**
@@ -14,7 +14,7 @@ public class Design5  {
 	   */
 		public double yOrTheta;
 	  
-	  public Design5(char type, double xOrRho, double yOrTheta)
+	 /* public Design5(char type, double xOrRho, double yOrTheta)
 	  {
 	    if(type != 'C' && type != 'P')
 	      throw new IllegalArgumentException();
@@ -22,6 +22,7 @@ public class Design5  {
 	    this.yOrTheta = yOrTheta;
 	    typeCoord = type;
 	  }
+	  */
 	  
 	  public double getX()
 	  {
@@ -83,6 +84,13 @@ public class Design5  {
 	      typeCoord = 'C';	//Change coord type identifier
 	    }
 	  }
+
+	   public String toString()
+  {
+    return "Stored as " + (typeCoord == 'C' 
+       ? "Cartesian  (" + getX() + "," + getY() + ")"
+       : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+  }
 	  
 
 }
