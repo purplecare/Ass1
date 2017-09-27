@@ -8,7 +8,7 @@ public class Address {
 		this.postal=postal;
 	}
 	public String toString(){
-		return this.street +this.number+this.postal;
+		return street+" "+number+" "+" "+postal;
 	}
 
 }
