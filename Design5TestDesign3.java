@@ -1,6 +1,6 @@
 
 import java.io.IOException;
-public class Design5Test {
+public class Design5TestDesign3 {
 	//Class methods *****************************************************
 
 	/**
