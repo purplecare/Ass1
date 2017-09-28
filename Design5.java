@@ -83,35 +83,16 @@ public abstract class Design5  {
 		else 
 			return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
 	}
-	  
-	public void convertStorageToPolar()
-	{
-		if(typeCoord != 'P')
-		{
-			//Calculate RHO and THETA
-			double temp = getRho();
-			yOrTheta = getTheta();
-			xOrRho = temp;
-
-			typeCoord = 'P';  //Change coord type identifier
-		}
-	}
+	
+	/**
+	* Converts Storage coordinates to Polar coordinates.
+	*/
+	public abstract void convertStorageToPolar();
 		
 	/**
 	* Converts Polar coordinates to Cartesian coordinates.
 	*/
-	public void convertStorageToCartesian()
-	{
-		if(typeCoord != 'C')
-		{
-			//Calculate X and Y
-			double temp = getX();
-			yOrTheta = getY();
-			xOrRho = temp;
-
-			typeCoord = 'C';	//Change coord type identifier
-		}
-	}
+	public abstract void convertStorageToCartesian();
 
 	public String toString()
 	{

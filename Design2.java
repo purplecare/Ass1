@@ -40,6 +40,32 @@ public class Design2 extends Design5 {
 		(Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
 		(Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
         }
+	
+	public void convertStorageToPolar()
+	{
+		if(typeCoord != 'P')
+		{
+			//Calculate RHO and THETA
+			double temp = getRho();
+			yOrTheta = getTheta();
+			xOrRho = temp;
+
+			typeCoord = 'P';  //Change coord type identifier
+		}
+	}
+	
+	public void convertStorageToCartesian()
+	{
+		if(typeCoord != 'C')
+		{
+			//Calculate X and Y
+			double temp = getX();
+			yOrTheta = getY();
+			xOrRho = temp;
+
+			typeCoord = 'C';	//Change coord type identifier
+		}
+	}
 	  
 	 
 	  

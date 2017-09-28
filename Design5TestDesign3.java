@@ -79,7 +79,7 @@ public class Design5TestDesign3 {
 			/**
 			 * Random methods to run
 			 */
-			if (type == 'c')
+			if (type == 'C')
 				point = point.rotatePoint(randType);
 			
 			/**
