@@ -38,7 +38,7 @@ public class Design5TestDesign3 {
 		Design3 PointB= new Design3('C',3,4);
 		int methodNum=0;
 		String[] ResultList= new String[9];
-		//while (methodNum<9){
+		while (methodNum<9){
 			long start= System.currentTimeMillis();
 			for (int w=0; w<2000; w++) {
 				Design3 point;
@@ -83,53 +83,47 @@ public class Design5TestDesign3 {
 				/**
 				 * Random methods to run
 				 */
-				
-				for (int h = 0; h < 50; h++) {
-					if (methodNum == 0){
-						point = point.rotatePoint(randType);
-						System.out.println("\nRotatePointMethod\n");
-					}
-					else if(methodNum==1) {
-						point.getDistance(PointB);
-						System.out.println("\nGetDistance\n");
+				if (methodNum == 0){
+					point = point.rotatePoint(randType);
+					System.out.println("\nRotatePointMethod\n");
+				}
+				else if(methodNum==1) {
+					point.getDistance(PointB);
+					System.out.println("\nGetDistance\n");
 
-					}
-					else if(methodNum==2){
-						point.convertStorageToPolar();
-						System.out.println("\nWorking\n");
+				}
+				else if(methodNum==2){
+					point.convertStorageToPolar();
+					System.out.println("\nWorking\n");
 
-					}
-					else if(methodNum==3){
-						point.convertStorageToCartesian();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==4){
-						point.getX();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==5){
-						point.getY();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==6){
-						point.getTheta();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==7){
-						point.getRho();
-						System.out.println("\nWorking\n");
+				}
+				else if(methodNum==3){
+					point.convertStorageToCartesian();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==4){
+					point.getX();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==5){
+					point.getY();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==6){
+					point.getTheta();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==7){
+					point.getRho();
+					System.out.println("\nWorking\n");
 
-					}
-					else if(methodNum==8){
-						point.toString();
-						System.out.println("\nWorking\n");
-					}
+				}
+				else if(methodNum==8){
+					point.toString();
+					System.out.println("\nWorking\n");
 				}
 				
-				
-						
-				
-				
+		
 				
 			}
 			long end = System.currentTimeMillis();
@@ -138,8 +132,8 @@ public class Design5TestDesign3 {
 			String UsedM= new Long(UsedMemory).toString()+"mb";
 			String Result=("time: "+ (end-start) + "ms "+ UsedM);
 			ResultList[methodNum]=Result;
-			//methodNum+=1;
-		//}
+			methodNum+=1;
+		}
 		for (String r:ResultList){
 			System.out.println(r);
 		}
