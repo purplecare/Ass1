@@ -31,5 +31,16 @@ public class Design3 extends Design5 {
 	public double getTheta() {
 		return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
 	}
+	
+	public Design3 rotatePoint(double rotation)
+        {
+		double radRotation = Math.toRadians(rotation);
+		double X = getX();
+		double Y = getY();
+
+		return new Design3('C',
+		(Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
+		(Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
+        }
 
 }

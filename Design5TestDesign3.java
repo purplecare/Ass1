@@ -10,6 +10,13 @@ public class Design5TestDesign3 {
 	static int randType;
 	static char type;
 	
+	/**
+	 * Variables to Determine Performance
+	 */
+	static long start;
+	static long end;
+	
+	
 	//Class methods *****************************************************
 
 	/**
@@ -28,6 +35,7 @@ public class Design5TestDesign3 {
 	*/
 	public static void main(String[] args)
 	{
+		long start= System.currentTimeMillis();
 		for (int w=0; w<10000; w++) {
 			Design3 point;
 			
@@ -48,9 +56,7 @@ public class Design5TestDesign3 {
 			// If he did not, prompt the user for them.
 			try
 			{
-				point = new Design3(type, 
-				randType, 
-				randType);
+				point = new Design3(type, randType, randType);
 			}
 			catch(Exception e)
 			{
@@ -69,13 +75,24 @@ public class Design5TestDesign3 {
 					return;
 				}
 			}
-		
-			System.out.println("\nYou entered:\n" + point);
-			point.convertStorageToCartesian();
-			System.out.println("\nAfter asking to store as Cartesian:\n" + point);
-			point.convertStorageToPolar();
-			System.out.println("\nAfter asking to store as Polar:\n" + point);
+			
+			/**
+			 * Random methods to run
+			 */
+			if (type == 'c')
+				point = point.rotatePoint(randType);
+			
+			/**
+			*System.out.println("\nYou entered:\n" + point);
+			*point.convertStorageToCartesian();
+			*System.out.println("\nAfter asking to store as Cartesian:\n" + point);
+			*point.convertStorageToPolar();
+			*System.out.println("\nAfter asking to store as Polar:\n" + point);
+			*/
+			System.out.println("\nWorking\n");
 		}
+		long end = System.currentTimeMillis();
+		System.out.println("time: "+ (end-start) + "ms");
 	}
 
 	/**

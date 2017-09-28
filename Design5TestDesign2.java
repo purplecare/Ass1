@@ -1,6 +1,22 @@
 
 import java.io.IOException;
+import java.util.Random;
 public class Design5TestDesign2 {
+	//Class Instance Variables *****************************************************
+	/**
+	 * Generate a Random number to choose between C or P
+	 */
+	static Random randInt = new Random();
+	static int randType;
+	static char type;
+	
+	/**
+	 * Variables to Determine Performance
+	 */
+	static long start;
+	static long end;
+	
+	
 	//Class methods *****************************************************
 
 	/**
@@ -19,42 +35,64 @@ public class Design5TestDesign2 {
 	*/
 	public static void main(String[] args)
 	{
-		Design2 point;
+		long start= System.currentTimeMillis();
+		for (int w=0; w<10000; w++) {
+			Design2 point;
+			
+			//Creating a random Type C or P
+			randType = randInt.nextInt(1);
+			if (randType == 0)
+				type = 'C';
+			else
+				type = 'P';
+			
+			//Creating Random Points
+			randType = randInt.nextInt(20);
+			
+			//System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
-		System.out.println("Cartesian-Polar Coordinates Conversion Program");
-
-		// Check if the user input coordinates from the command line
-		// If he did, create the PointCP object from these arguments.
-		// If he did not, prompt the user for them.
-		try
-		{
-			point = new Design2(args[0].toUpperCase().charAt(0), 
-			Double.valueOf(args[1]).doubleValue(), 
-			Double.valueOf(args[2]).doubleValue());
-		}
-		catch(Exception e)
-		{
-			// If we arrive here, it is because either there were no
-			// command line arguments, or they were invalid
-			if(args.length != 0)
-				System.out.println("Invalid arguments on command line");
-
+			// Check if the user input coordinates from the command line
+			// If he did, create the PointCP object from these arguments.
+			// If he did not, prompt the user for them.
 			try
 			{
-				point = getInput();
+				point = new Design2(type, randType, randType);
 			}
-			catch(IOException ex)
+			catch(Exception e)
 			{
-				System.out.println("Error getting input. Ending program.");
-				return;
+				// If we arrive here, it is because either there were no
+				// command line arguments, or they were invalid
+				if(args.length != 0)
+					System.out.println("Invalid arguments on command line");
+
+				try
+				{
+					point = getInput();
+				}
+				catch(IOException ex)
+				{
+					System.out.println("Error getting input. Ending program.");
+					return;
+				}
 			}
+			
+			/**
+			 * Random methods to run
+			 */
+			if (type == 'c')
+				point = point.rotatePoint(randType);
+			
+			/**
+			*System.out.println("\nYou entered:\n" + point);
+			*point.convertStorageToCartesian();
+			*System.out.println("\nAfter asking to store as Cartesian:\n" + point);
+			*point.convertStorageToPolar();
+			*System.out.println("\nAfter asking to store as Polar:\n" + point);
+			*/
+			System.out.println("\nWorking\n");
 		}
-		
-		System.out.println("\nYou entered:\n" + point);
-		point.convertStorageToCartesian();
-		System.out.println("\nAfter asking to store as Cartesian:\n" + point);
-		point.convertStorageToPolar();
-		System.out.println("\nAfter asking to store as Polar:\n" + point);
+		long end = System.currentTimeMillis();
+		System.out.println("time: "+ (end-start) + "ms");
 	}
 
 	/**

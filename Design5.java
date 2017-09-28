@@ -29,7 +29,7 @@ public abstract class Design5  {
 	* @param pointB The second point.
 	* @return The distance between the two points.
 	*/
-        public double getDistance(PointCP pointB)
+        public double getDistance(Design5 pointB)
         {
 		// Obtain differences in X and Y, sign is not important as these values
 		// will be squared later.
@@ -47,16 +47,8 @@ public abstract class Design5  {
 	* @param rotation The number of degrees to rotate the point.
 	* @return The rotated image of the original point.
 	*/
-        public PointCP rotatePoint(double rotation)
-        {
-		double radRotation = Math.toRadians(rotation);
-		double X = getX();
-		double Y = getY();
+        public abstract Design5 rotatePoint(double rotation);
 
-		return new PointCP('C',
-		(Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
-		(Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
-        }
 	
 	 //Instance methods **************************************************
 	

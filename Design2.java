@@ -29,6 +29,17 @@ public class Design2 extends Design5 {
 	public double getTheta() {
 		return yOrTheta;
 	}
+	
+	public Design2 rotatePoint(double rotation)
+        {
+		double radRotation = Math.toRadians(rotation);
+		double X = getX();
+		double Y = getY();
+
+		return new Design2('C',
+		(Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
+		(Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
+        }
 	  
 	 
 	  
