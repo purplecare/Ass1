@@ -37,10 +37,10 @@ public class Design5TestDesign2 {
 	{
 		Design2 PointB= new Design2('C',3,4);
 		int methodNum=0;
-		String[] ResultList= new String[4];
-		while (methodNum<4){
+		String[] ResultList= new String[9];
+		while (methodNum<9){
 			long start= System.currentTimeMillis();
-			for (int w=0; w<10000; w++) {
+			for (int w=0; w<100000; w++) {
 				Design2 point;
 				
 				//Creating a random Type C or P
@@ -103,6 +103,28 @@ public class Design5TestDesign2 {
 					point.convertStorageToCartesian();
 					System.out.println("\nWorking\n");
 				}
+				else if(methodNum==4){
+					point.getX();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==5){
+					point.getY();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==6){
+					point.getTheta();
+					System.out.println("\nWorking\n");
+				}
+				else if(methodNum==7){
+					point.getRho();
+					System.out.println("\nWorking\n");
+	
+				}
+				else if(methodNum==8){
+					point.toString();
+					System.out.println("\nWorking\n");
+				}
+				
 				
 						
 				
@@ -114,7 +136,6 @@ public class Design5TestDesign2 {
 			long UsedMemory= runtime.totalMemory()-runtime.freeMemory();
 			String UsedM= new Long(UsedMemory).toString()+"mb";
 			String Result=("time: "+ (end-start) + "ms "+ UsedM);
-			System.out.println(runtime.totalMemory()-runtime.freeMemory());
 			ResultList[methodNum]=Result;
 			methodNum+=1;
 		}
