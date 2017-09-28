@@ -29,16 +29,8 @@ public abstract class Design5  {
 	* @param pointB The second point.
 	* @return The distance between the two points.
 	*/
-        public double getDistance(Design5 pointB)
-        {
-		// Obtain differences in X and Y, sign is not important as these values
-		// will be squared later.
-		double deltaX = getX() - pointB.getX();
-		double deltaY = getY() - pointB.getY();
+        public abstract double getDistance(Design5 pointB);
 
-		return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
-        }
-	
 	/**
 	* Rotates the specified point by the specified number of degrees.
 	* Not required until E2.30

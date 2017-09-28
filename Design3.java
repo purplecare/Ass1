@@ -43,6 +43,16 @@ public class Design3 extends Design5 {
 		(Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
         }
 	
+	public double getDistance(Design5 pointB)
+        {
+		// Obtain differences in X and Y, sign is not important as these values
+		// will be squared later.
+		double deltaX = getX() - pointB.getX();
+		double deltaY = getY() - pointB.getY();
+
+		return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
+        }
+	
 	public void convertStorageToPolar()
 	{
 		if(typeCoord != 'P')
