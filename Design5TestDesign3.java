@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.util.Random;
 public class Design5TestDesign3 {
@@ -38,9 +37,9 @@ public class Design5TestDesign3 {
 		Design3 PointB= new Design3('C',3,4);
 		int methodNum=0;
 		String[] ResultList= new String[9];
-		//while (methodNum<9){
+		while (methodNum<9){
 			long start= System.currentTimeMillis();
-			for (int w=0; w<2000; w++) {
+			for (int w=0; w<1000000; w++) {
 				Design3 point;
 				
 				//Creating a random Type C or P
@@ -60,7 +59,7 @@ public class Design5TestDesign3 {
 				// If he did not, prompt the user for them.
 				try
 				{
-					point = new Design3(type, randType, randType);
+					point = new Design3 (type, randType, randType);
 				}
 				catch(Exception e)
 				{
@@ -84,46 +83,45 @@ public class Design5TestDesign3 {
 				 * Random methods to run
 				 */
 				
-				for (int h = 0; h < 50; h++) {
-					if (methodNum == 0){
-						point = point.rotatePoint(randType);
-						System.out.println("\nRotatePointMethod\n");
-					}
-					else if(methodNum==1) {
-						point.getDistance(PointB);
-						System.out.println("\nGetDistance\n");
-
-					}
-					else if(methodNum==2){
-						point.convertStorageToPolar();
-						System.out.println("\nWorking\n");
-
-					}
-					else if(methodNum==3){
-						point.convertStorageToCartesian();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==4){
-						point.getX();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==5){
-						point.getY();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==6){
-						point.getTheta();
-						System.out.println("\nWorking\n");
-					}
-					else if(methodNum==7){
-						point.getRho();
-						System.out.println("\nWorking\n");
-
-					}
-					else if(methodNum==8){
-						point.toString();
-						System.out.println("\nWorking\n");
-					}
+				
+				if (methodNum == 0){
+					point = point.rotatePoint(randType);
+					System.out.println("\nWorking0\n");
+				}
+				else if(methodNum==1) {
+					point.getDistance(PointB);
+					System.out.println("\nWorking1\n");
+	
+				}
+				else if(methodNum==2){
+					point.convertStorageToPolar();
+					System.out.println("\nWorking2\n");
+	
+				}
+				else if(methodNum==3){
+					point.convertStorageToCartesian();
+					System.out.println("\nWorking3\n");
+				}
+				else if(methodNum==4){
+					point.getX();
+					System.out.println("\nWorking4\n");
+				}
+				else if(methodNum==5){
+					point.getY();
+					System.out.println("\nWorking5\n");
+				}
+				else if(methodNum==6){
+					point.getTheta();
+					System.out.println("\nWorking6\n");
+				}
+				else if(methodNum==7){
+					point.getRho();
+					System.out.println("\nWorking7\n");
+	
+				}
+				else if(methodNum==8){
+					point.toString();
+					System.out.println("\nWorking8\n");
 				}
 				
 				
@@ -138,8 +136,8 @@ public class Design5TestDesign3 {
 			String UsedM= new Long(UsedMemory).toString()+"mb";
 			String Result=("time: "+ (end-start) + "ms "+ UsedM);
 			ResultList[methodNum]=Result;
-			//methodNum+=1;
-		//}
+			methodNum+=1;
+		}
 		for (String r:ResultList){
 			System.out.println(r);
 		}
