@@ -93,6 +93,8 @@ public class Design5TestDesign2 {
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("time: "+ (end-start) + "ms");
+		Runtime runtime= Runtime.getRuntime();
+		System.out.println(runtime.totalMemory()-runtime.freeMemory());
 	}
 
 	/**
