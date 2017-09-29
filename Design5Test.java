@@ -8,7 +8,6 @@ public class Design5Test {
 	 */
 	static Random randInt = new Random();
 	static int randType;
-	static int randDesign;
 	static char type;
 	static String design;
 	static Design5 point;
@@ -43,7 +42,7 @@ public class Design5Test {
 		String[] ResultList= new String[9];
 		while (methodNum<9){
 			long start= System.currentTimeMillis();
-			for (int w=0; w<1500000; w++) {
+			for (int w = 0; w < 1500000; w++) {
 				
 				//Creating a random Type C or P
 				randType = randInt.nextInt(2);
@@ -64,8 +63,7 @@ public class Design5Test {
 				
 				try
 				{
-					randDesign = randInt.nextInt(2);
-					if (randDesign == 0) {
+					if (w > 750000) {
 						point = new Design2(type, randType, randType);
 						design = "Design 2";
 					}
