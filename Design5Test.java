@@ -53,8 +53,8 @@ public class Design5Test {
 					type = 'P';
 				
 				//Creating Random Points
-				randType = randInt.nextInt(20);
-				randDesign = randInt.nextInt(20);
+				randType = randInt.nextInt(50);
+				randDesign = randInt.nextInt(50);
 				
 				//System.out.println("Cartesian-Polar Coordinates Conversion Program");
 	
