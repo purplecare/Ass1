@@ -1,14 +1,17 @@
 
 import java.io.IOException;
 import java.util.Random;
-public class Design5TestDesign2 {
+public class Design5Test {
 	//Class Instance Variables *****************************************************
 	/**
 	 * Generate a Random number to choose between C or P
 	 */
 	static Random randInt = new Random();
 	static int randType;
+	static int randDesign;
 	static char type;
+	static String design;
+	static Design5 point;
 	
 	/**
 	 * Variables to Determine Performance
@@ -40,11 +43,10 @@ public class Design5TestDesign2 {
 		String[] ResultList= new String[9];
 		while (methodNum<9){
 			long start= System.currentTimeMillis();
-			for (int w=0; w<1000000; w++) {
-				Design2 point;
+			for (int w=0; w<1500000; w++) {
 				
 				//Creating a random Type C or P
-				randType = randInt.nextInt(1);
+				randType = randInt.nextInt(2);
 				if (randType == 0)
 					type = 'C';
 				else
@@ -58,9 +60,19 @@ public class Design5TestDesign2 {
 				// Check if the user input coordinates from the command line
 				// If he did, create the PointCP object from these arguments.
 				// If he did not, prompt the user for them.
+				
+				
 				try
 				{
-					point = new Design2(type, randType, randType);
+					randDesign = randInt.nextInt(2);
+					if (randDesign == 0) {
+						point = new Design2(type, randType, randType);
+						design = "Design 2";
+					}
+					else {
+						point = new Design3(type, randType, randType);
+						design = "Design 3";
+					}
 				}
 				catch(Exception e)
 				{
@@ -87,37 +99,37 @@ public class Design5TestDesign2 {
 				
 				if (methodNum == 0){
 					point = point.rotatePoint(randType);
-					System.out.println("\nWorking0\n");
+					System.out.println("\nWorking0\n" + design);
 				}
 				else if(methodNum==1) {
 					point.getDistance(PointB);
-					System.out.println("\nWorking1\n");
+					System.out.println("\nWorking1\n" + design);
 	
 				}
 				else if(methodNum==2){
 					point.convertStorageToPolar();
-					System.out.println("\nWorking2\n");
+					System.out.println("\nWorking2\n" + design);
 	
 				}
 				else if(methodNum==3){
 					point.convertStorageToCartesian();
-					System.out.println("\nWorking3\n");
+					System.out.println("\nWorking3\n" + design);
 				}
 				else if(methodNum==4){
 					point.getX();
-					System.out.println("\nWorking4\n");
+					System.out.println("\nWorking4\n" + design);
 				}
 				else if(methodNum==5){
 					point.getY();
-					System.out.println("\nWorking5\n");
+					System.out.println("\nWorking5\n" + design);
 				}
 				else if(methodNum==6){
 					point.getTheta();
-					System.out.println("\nWorking6\n");
+					System.out.println("\nWorking6\n" + design);
 				}
 				else if(methodNum==7){
 					point.getRho();
-					System.out.println("\nWorking7\n");
+					System.out.println("\nWorking7\n" + design);
 	
 				}
 				else if(methodNum==8){
