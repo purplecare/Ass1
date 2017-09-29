@@ -8,6 +8,7 @@ public class Design5Test {
 	 */
 	static Random randInt = new Random();
 	static int randType;
+	static int randDesign;
 	static char type;
 	static String design;
 	static Design5 point;
@@ -53,6 +54,7 @@ public class Design5Test {
 				
 				//Creating Random Points
 				randType = randInt.nextInt(20);
+				randDesign = randInt.nextInt(20);
 				
 				//System.out.println("Cartesian-Polar Coordinates Conversion Program");
 	
@@ -64,11 +66,11 @@ public class Design5Test {
 				try
 				{
 					if (w > 750000) {
-						point = new Design2(type, randType, randType);
+						point = new Design2(type, randType, randDesign);
 						design = "Design 2";
 					}
 					else {
-						point = new Design3(type, randType, randType);
+						point = new Design3(type, randType, randDesign);
 						design = "Design 3";
 					}
 				}
